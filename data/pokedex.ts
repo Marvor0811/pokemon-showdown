@@ -16944,8 +16944,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		cosmeticFormes: ["Pokestar Black Belt-Prop"],
 		gen: 5,
 	},
-	bulbasaur: {
-		num: -50001,
+	bulbasuree: {
+		num: 1,
 		name: "Bulbasuree",
 		types: ["Grass", "Poison"],
 		genderRatio: {M: 0.875, F: 0.125},
