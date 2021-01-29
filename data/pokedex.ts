@@ -16945,7 +16945,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		gen: 5,
 	},
 	bulbasuree: {
-		num: -5001,
+		num: 1,
 		name: "Bulbasuree",
 		types: ["Grass", "Poison"],
 		genderRatio: {M: 0.875, F: 0.125},
