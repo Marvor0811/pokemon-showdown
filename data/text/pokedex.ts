@@ -3671,7 +3671,10 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	pokestarblackbelt: {
 		name: "Pokestar Black Belt",
 	},
-	pokestarufopropu2: {
-		name: "Pokestar UFO-PropU2",
+	bulbasuree: {
+		name: "Bulbasuree",
 	},
+	// pokestarufopropu2: {
+	// 	name: "Pokestar UFO-PropU2",
+	// },
 };
