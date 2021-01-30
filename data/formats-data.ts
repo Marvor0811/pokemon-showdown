@@ -6420,4 +6420,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
+	bulbasuree: {
+		tier: "OU",
+	},
 };

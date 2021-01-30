@@ -1706,4 +1706,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+	stonks: {
+		name: "Stonks",
+		shortDesc: "Too strong.",
+	},
 };

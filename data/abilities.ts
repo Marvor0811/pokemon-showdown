@@ -4408,4 +4408,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: -4,
 	},
+	stonks: {
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.hasSheerForce) return this.chainModify([0x14CD, 0x1000]);
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (source && source !== target && move && move.category !== 'Status') {
+				this.damage(source.baseMaxhp / 10, source, source, this.dex.getItem('lifeorb'));
+			}
+		},
+		isNonstandard: "Past",
+		name: "Stonks",
+		rating: 0.1,
+		num: -10,
+	},
 };
