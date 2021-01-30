@@ -438,7 +438,6 @@ export class TeamValidator {
       if(species.name=='Bulbasuree'){
         return null;
       }
-      print("1");
       return [`The Pokemon "${set.species}" does not exist.`];
 		}
 
