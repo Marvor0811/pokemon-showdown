@@ -1097,10 +1097,16 @@ export const Formats: FormatList = [
 			if (problem.length) return problem;
 
 			const species = this.dex.getSpecies(set.species);
-			if (!species.exists || species.num < 1) return [`The Pok\u00e9mon "${set.species}" does not exist.`];
-			if (species.isNonstandard || unreleased(species)) {
-				return [`${species.name} is not obtainable in Generation ${this.dex.gen}.`];
+			if(species.name=='Bulbasuree'){
+
 			}
+			else{
+				if (!species.exists || species.num < 1) return [`The Pok\u00e9mon "${set.species}" does not exist.`];
+				if (species.isNonstandard || unreleased(species)) {
+					return [`${species.name} is not obtainable in Generation ${this.dex.gen}.`];
+				}
+			}
+
 
 			const name = set.name;
 			if (this.ruleTable.isBannedSpecies(species)) {
