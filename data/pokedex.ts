@@ -1,4 +1,16 @@
 export const Pokedex: {[speciesid: string]: SpeciesData} = {
+	bulbasuree: {
+		num: 1,
+		name: "Bulbasuree",
+		types: ["Grass", "Poison"],
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 450, atk: 49, def: 49, spa: 65, spd: 65, spe: 45},
+		abilities: {0: "Stonks", H: "Chlorophyll"},
+		heightm: 0.7,
+		weightkg: 6.9,
+		color: "Green",
+		eggGroups: ["Monster", "Grass"],
+	},
 	bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",
@@ -16944,18 +16956,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		cosmeticFormes: ["Pokestar Black Belt-Prop"],
 		gen: 5,
 	},
-	bulbasuree: {
-		num: 1,
-		name: "Bulbasuree",
-		types: ["Grass", "Poison"],
-		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 450, atk: 49, def: 49, spa: 65, spd: 65, spe: 45},
-		abilities: {0: "Stonks", H: "Chlorophyll"},
-		heightm: 0.7,
-		weightkg: 6.9,
-		color: "Green",
-		eggGroups: ["Monster", "Grass"],
-	},
+
 	// pokestarufopropu2: {
 	// 	num: -5001,
 	// 	name: "Pokestar UFO-PropU2",
