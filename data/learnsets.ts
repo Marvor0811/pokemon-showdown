@@ -82351,9 +82351,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			{generation: 6, level: 5, moves: ["growl", "leechseed", "vinewhip", "poisonpowder"], pokeball: "cherishball"},
 			{generation: 6, level: 5, isHidden: true, moves: ["tackle", "growl", "celebrate"], pokeball: "cherishball"},
 		],
-		// encounters: [
-		// 	{generation: 1, level: 5},
-		// ],
+		encounters: [
+			{generation: 1, level: 5},
+		],
 	},
 	pokestarufopropu2: {
 		eventData: [

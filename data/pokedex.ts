@@ -16954,7 +16954,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.7,
 		weightkg: 6.9,
 		color: "Green",
-		evos: ["Ivysaur"],
 		eggGroups: ["Monster", "Grass"],
 	},
 	// pokestarufopropu2: {
