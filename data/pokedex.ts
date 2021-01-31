@@ -2,6 +2,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	bulbasuree: {
 		num: 1,
 		name: "Bulbasuree",
+		baseSpecies:"Bulbasaur",
 		types: ["Grass", "Poison"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 450, atk: 49, def: 49, spa: 65, spd: 65, spe: 45},
@@ -22,6 +23,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 6.9,
 		color: "Green",
 		evos: ["Ivysaur"],
+		otherFormes: ["Bulbasuree"],
+		formeOrder: ["Bulbasaur", "Bulbasuree"],
 		eggGroups: ["Monster", "Grass"],
 	},
 	ivysaur: {
