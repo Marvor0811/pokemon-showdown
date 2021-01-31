@@ -4417,9 +4417,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.damage(source.baseMaxhp / 10, source, source, this.dex.getItem('lifeorb'));
 			}
 		},
-		isNonstandard: "Past",
+
 		name: "Stonks",
-		rating: 0.1,
+		rating: 1,
 		num: -10,
 	},
 };
