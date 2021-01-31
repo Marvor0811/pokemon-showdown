@@ -435,9 +435,6 @@ export class TeamValidator {
 			setSources.sources = ['8S0 melmetal'];
 		}
 		if (!species.exists) {
-      if(species.name=='Bulbasuree'){
-        return null;
-      }
       return [`The Pokemon "${set.species}" does not exist.`];
 		}
 
