@@ -3160,7 +3160,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {authentic: 1},
 		volatileStatus: 'hide',
-		onPrepareHit(pokemon) {
+		/*onPrepareHit(pokemon) {
 			return !pokemon.removeVolatile('hide');
 		},
 		onTryMove(attacker, defender, move) {
@@ -3185,6 +3185,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onMoveAborted(pokemon, target, move) {
 				pokemon.removeVolatile('hide');
+			},
+		},*/
+		onPrepareHit(pokemon) {
+			return !pokemon.removeVolatile('destinybond');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.add('-singlemove', pokemon, 'Destiny Bond');
+			},
+			onInvulnerability(target, source, move) {
+				return false;
+				},
+			},
+			onBeforeMovePriority: -1,
+			onBeforeMove(pokemon, target, move) {
+				if (move.id === 'destinybond') return;
+				this.debug('removing Destiny Bond before attack');
+				pokemon.removeVolatile('destinybond');
+			},
+			onMoveAborted(pokemon, target, move) {
+				pokemon.removeVolatile('destinybond');
 			},
 		},
 	},
