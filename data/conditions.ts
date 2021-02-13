@@ -285,9 +285,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onEnd(target) {
 			target.removeVolatile(this.effectData.move);
 		},
-		onLockMove() {
+		/*onLockMove() {
 			return this.effectData.move;
-		},
+		},*/
 		onMoveAborted(pokemon) {
 			pokemon.removeVolatile('twoturnmove');
 		},
