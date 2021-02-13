@@ -53,7 +53,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		name: "Assassins Mark",
 		rating: 4,
-		num: 91,
+		num: -11,
 	},
 	aerilate: {
 		onModifyTypePriority: -1,
