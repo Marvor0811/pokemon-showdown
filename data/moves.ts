@@ -3159,9 +3159,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 		priority: 0,
 		flags: {authentic: 1},
-		volatileStatus: 'hide',
+		volatileStatus: 'protect',
 		onPrepareHit(pokemon) {
-			return !pokemon.removeVolatile('hide');
+			return !pokemon.removeVolatile('stall');
 		},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -3180,11 +3180,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return false;
 			},
 			onBeforeMove(pokemon, target, move) {
-				this.debug('removing Hide before attack');
-				pokemon.removeVolatile('hide');
+				this.debug('removing Stall before attack');
+				pokemon.removeVolatile('stall');
 			},
 			onMoveAborted(pokemon, target, move) {
-				pokemon.removeVolatile('hide');
+				pokemon.removeVolatile('stall');
 			},
 		},
 	},
