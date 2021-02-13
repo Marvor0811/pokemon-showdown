@@ -3159,19 +3159,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 		priority: 0,
 		flags: {authentic: 1},
-		volatileStatus: 'protect',
+		volatileStatus: 'hide',
 		onPrepareHit(pokemon) {
-			return !pokemon.removeVolatile('stall');
+			return !pokemon.removeVolatile('hide');
 		},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
-			this.add('-prepare', attacker, move.name);
+			/*this.add('-prepare', attacker, move.name);
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
-			}
-			// attacker.addVolatile('twoturnmove', defender);
+			}*/
+			attacker.addVolatile('twoturnmove', defender);
 			return null;
 		},
 		condition: {
@@ -3180,11 +3180,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return false;
 			},
 			onBeforeMove(pokemon, target, move) {
-				this.debug('removing Stall before attack');
-				pokemon.removeVolatile('stall');
+				this.debug('removing Hide before attack');
+				pokemon.removeVolatile('hide');
 			},
 			onMoveAborted(pokemon, target, move) {
-				pokemon.removeVolatile('stall');
+				pokemon.removeVolatile('hide');
 			},
 		},
 	},
