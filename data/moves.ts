@@ -3194,8 +3194,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onStart(pokemon) {
 				this.add('-singlemove', pokemon, 'Destiny Bond');
 			},
-			onInvulnerability(target, source, move) {
-				return false;
+			onHit(pokemon) {
+				pokemon.addVolatile('stall');
 			},
 			onBeforeMovePriority: -1,
 			onBeforeMove(pokemon, target, move) {
