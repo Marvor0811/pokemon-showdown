@@ -3167,11 +3167,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
-			/*this.add('-prepare', attacker, move.name);
+			this.add('-prepare', attacker, move.name);
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
-			}*/
-			attacker.addVolatile('twoturnmove', defender);
+			}
+			attacker.addVolatile('hide', defender);
 			return null;
 		},
 		condition: {

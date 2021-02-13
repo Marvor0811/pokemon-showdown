@@ -263,6 +263,32 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return this.effectData.move;
 		},
 	},
+	hide: {
+		// Skull Bash, SolarBeam, Sky Drop...
+		name: 'hide',
+		duration: 2,
+		onStart(target, source, effect) {
+			this.effectData.move = effect.id;
+			target.addVolatile(effect.id);
+			let moveTarget: Pokemon | null = source;
+			if (effect.sourceEffect && this.dex.getMove(effect.id).target === 'normal') {
+				// this move was called by another move such as metronome and needs a random target to be determined now
+				// won't randomly choose an empty slot if there's at least one valid target
+				moveTarget = this.getRandomTarget(target, effect.id);
+			}
+			// if there are no valid targets, randomly choose one later
+			target.volatiles[effect.id].targetLoc = this.getTargetLoc(moveTarget || target, target);
+			this.attrLastMove('[still]');
+			// Run side-effects normally associated with hitting (e.g., Protean, Libero)
+			this.runEvent('PrepareHit', target, source, effect);
+		},
+		onEnd(target) {
+			target.removeVolatile(this.effectData.move);
+		},
+		onMoveAborted(pokemon) {
+			pokemon.removeVolatile('hide');
+		},
+	},
 	twoturnmove: {
 		// Skull Bash, SolarBeam, Sky Drop...
 		name: 'twoturnmove',
@@ -285,9 +311,9 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onEnd(target) {
 			target.removeVolatile(this.effectData.move);
 		},
-		/*onLockMove() {
+		onLockMove() {
 			return this.effectData.move;
-		},*/
+		},
 		onMoveAborted(pokemon) {
 			pokemon.removeVolatile('twoturnmove');
 		},
