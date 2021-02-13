@@ -3149,7 +3149,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {effect: 'redirect'},
 		contestType: "Clever",
 	},
-	twilight_shroud:{
+	twilightshroud:{
 		num: 194,
 		accuracy: true,
 		basePower: 0,
@@ -5142,7 +5142,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
-	five_point_strike: {
+	fivepointstrike: {
 		num: 53,
 		accuracy: 100,
 		basePower: 90,
