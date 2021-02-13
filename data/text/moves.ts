@@ -26,6 +26,16 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
 	},
+	five_point_strike: {
+		name: "Five Point Strike",
+		desc: "Deals damage",
+		shortDesc: "Deals damage",
+	},
+	twilight_shroud: {
+		name: "Twilight Shroud",
+		desc: "Hide self",
+		shortDesc: "Used to hide self",
+	},
 	acid: {
 		name: "Acid",
 		desc: "Has a 10% chance to lower the target's Special Defense by 1 stage.",
