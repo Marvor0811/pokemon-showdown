@@ -3156,11 +3156,23 @@ export const Moves: {[moveid: string]: MoveData} = {
 		category: "Status",
 		name: "Twilight Shroud",
 		pp: 5,
+		type: "Dark",
 		priority: 0,
 		flags: {authentic: 1},
 		volatileStatus: 'hide',
 		onPrepareHit(pokemon) {
 			return !pokemon.removeVolatile('hide');
+		},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
 		},
 		condition: {
 			onBeforeMovePriority: -1,
