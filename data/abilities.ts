@@ -51,7 +51,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyMove(move) {
 			move.stab = 2;
 		},
-		name: "Assassin's Mark",
+		name: "Assassins Mark",
 		rating: 4,
 		num: 91,
 	},

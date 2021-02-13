@@ -5057,7 +5057,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Akali",
 		types: ["Fighting", "Dark"],
 		baseStats: {hp: 80, atk: 105, def: 75, spa: 110, spd: 75, spe: 90},
-		abilities: {0: "Assassin's Mark"},
+		abilities: {0: "Assassins Mark"},
 		heightm: 1.3,
 		weightkg: 59.6,
 		color: "Brown",
