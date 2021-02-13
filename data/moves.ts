@@ -3172,7 +3172,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return;
 			}
 			// attacker.addVolatile('twoturnmove', defender);
-			// return null;
+			return null;
 		},
 		condition: {
 			onBeforeMovePriority: -1,
