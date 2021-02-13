@@ -3196,7 +3196,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onInvulnerability(target, source, move) {
 				return false;
-				},
 			},
 			onBeforeMovePriority: -1,
 			onBeforeMove(pokemon, target, move) {
