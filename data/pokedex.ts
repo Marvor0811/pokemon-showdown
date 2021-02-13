@@ -5052,6 +5052,17 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoItem: "Leaf Stone",
 		eggGroups: ["Field", "Grass"],
 	},
+	akali: {
+		num: 275,
+		name: "Akali",
+		types: ["Fight", "Dark"],
+		baseStats: {hp: 80, atk: 105, def: 75, spa: 110, spd: 75, spe: 90},
+		abilities: {0: "Chlorophyll", 1: "Early Bird", H: "Pickpocket"},
+		heightm: 1.3,
+		weightkg: 59.6,
+		color: "Brown",
+		eggGroups: ["Field", "Grass"],
+	},
 	taillow: {
 		num: 276,
 		name: "Taillow",

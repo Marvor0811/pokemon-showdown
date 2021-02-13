@@ -1,4 +1,7 @@
 export const PokedexText: {[k: string]: PokedexText} = {
+	akali: {
+		name: "Akali",
+	},
 	bulbasaur: {
 		name: "Bulbasaur",
 	},
