@@ -31,6 +31,12 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			watergun: ["3L1"],
 		},
 	},
+	akali:{
+		learnset: {
+			twilight_shroud: ["8M"],
+			five_point_strike: ["8M"],
+		}, 
+	},
 	bulbasaur: {
 		learnset: {
 			amnesia: ["8M", "7E", "6E", "5E", "4E"],

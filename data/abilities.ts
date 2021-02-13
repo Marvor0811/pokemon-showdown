@@ -47,6 +47,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 91,
 	},
+	assassin_s_mark: {
+		onModifyMove(move) {
+			move.stab = 2;
+		},
+		name: "Assassin's Mark",
+		rating: 4,
+		num: 91,
+	},
 	aerilate: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {

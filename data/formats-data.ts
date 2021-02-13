@@ -2018,6 +2018,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
+	akali: {
+		tier:"OU",
+	},
 	taillow: {
 		isNonstandard: "Past",
 		tier: "Illegal",

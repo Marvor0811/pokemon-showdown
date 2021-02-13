@@ -3149,6 +3149,33 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {effect: 'redirect'},
 		contestType: "Clever",
 	},
+	twilight_shroud:{
+		num: 194,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Twilight Shroud",
+		pp: 5,
+		priority: 0,
+		flags: {authentic: 1},
+		volatileStatus: 'hide',
+		onPrepareHit(pokemon) {
+			return !pokemon.removeVolatile('hide');
+		},
+		condition: {
+			onBeforeMovePriority: -1,
+			onInvulnerability(target, source, move) {
+				return false;
+			},
+			onBeforeMove(pokemon, target, move) {
+				this.debug('removing Hide before attack');
+				pokemon.removeVolatile('hide');
+			},
+			onMoveAborted(pokemon, target, move) {
+				pokemon.removeVolatile('hide');
+			},
+		},
+	},
 	detect: {
 		num: 197,
 		accuracy: true,
@@ -5113,6 +5140,19 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		target: "normal",
 		type: "Fire",
+		contestType: "Beautiful",
+	},
+	five_point_strike: {
+		num: 53,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Five Point Strike",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		target: "normal",
+		type: "Fighting",
 		contestType: "Beautiful",
 	},
 	flareblitz: {
