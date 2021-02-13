@@ -33,9 +33,9 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	akali:{
 		learnset: {
-			twilight_shroud: ["8M"],
-			five_point_strike: ["8M"],
-		}, 
+			twilightshroud: ["8M"],
+			fivepointstrike: ["8M"],
+		},
 	},
 	bulbasaur: {
 		learnset: {

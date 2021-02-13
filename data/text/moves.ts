@@ -26,12 +26,12 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
 	},
-	five_point_strike: {
+	fivepointstrike: {
 		name: "Five Point Strike",
 		desc: "Deals damage",
 		shortDesc: "Deals damage",
 	},
-	twilight_shroud: {
+	twilightshroud: {
 		name: "Twilight Shroud",
 		desc: "Hide self",
 		shortDesc: "Used to hide self",

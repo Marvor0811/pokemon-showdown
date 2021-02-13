@@ -3,7 +3,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "No Ability",
 		shortDesc: "Does nothing.",
 	},
-	assassin_s_mark: {
+	assassinsmark: {
 		name: "Assassin's Mark",
 		shortDesc: "Too edgy",
 	},
