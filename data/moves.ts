@@ -5174,9 +5174,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const spd = target.getStat('spd', false, true);
 
 			move.type = 'Dark';
-			const darkEffectiveness=target.runEffectiveness(move);
+			const darkEffectiveness=target.getMoveHitData(move).typeMod;
 			move.type = 'Fighting';
-			const fightEffectiveness=target.runEffectiveness(move);
+			const fightEffectiveness=target.getMoveHitData(move).typeMod;
 			const physical=1;
 			const special=1;
 			if(fightEffectiveness>0){
