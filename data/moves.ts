@@ -5173,11 +5173,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const def = target.getStat('def', false, true);
 			const spd = target.getStat('spd', false, true);
 			const physical = Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50);
+			move.type = 'Dark';
 			const special = Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * spa) / spd) / 50);
 			if (special > physical || (physical === special && this.random(2) === 0)) {
 				move.category = 'Special';
-				move.type = 'Dark';
-				move.flags.contact = 1;
+			}
+			else {
+				move.category= 'Physical';
+				move.type = 'Fighting';
 			}
 		},
 		onHit(target, source, move) {
