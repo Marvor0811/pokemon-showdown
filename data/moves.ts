@@ -5158,7 +5158,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 53,
 		accuracy: 100,
 		basePower: 90,
-		category: "Special",
+		category: "Physical",
 		name: "Five Point Strike",
 		pp: 15,
 		priority: 0,
@@ -5166,6 +5166,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Fighting",
 		contestType: "Beautiful",
+		onModifyMove(move, pokemon, target) {
+			if (!target) return;
+			const atk = pokemon.getStat('atk', false, true);
+			const spa = pokemon.getStat('spa', false, true);
+			const def = target.getStat('def', false, true);
+			const spd = target.getStat('spd', false, true);
+			const physical = Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50);
+			const special = Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * spa) / spd) / 50);
+			if (special > physical || (physical === special && this.random(2) === 0)) {
+				move.category = 'Special';
+				move.type = 'Dark';
+				move.flags.contact = 1;
+			}
+		},
+		onHit(target, source, move) {
+			this.hint(move.category + " Shell Side Arm");
+		},
+		onAfterSubDamage(damage, target, source, move) {
+			this.hint(move.category + " Shell Side Arm");
+		},
 	},
 	flareblitz: {
 		num: 394,
