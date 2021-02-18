@@ -5177,8 +5177,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const darkEffectiveness=target.getMoveHitData(move).typeMod;
 			move.type = 'Fighting';
 			const fightEffectiveness=target.getMoveHitData(move).typeMod;
-			const physical=1;
-			const special=1;
+			var physical=1;
+			var special=1;
 			if(fightEffectiveness>0){
 				physical = fightEffectiveness*(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50));
 			}
