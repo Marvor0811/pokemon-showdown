@@ -3205,7 +3205,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.add('-singlemove', pokemon, 'Shuriken Flip');
 			},*/
 			onModifyMove(move, source, target) {
-				return priority + 1;
+				move.priority=move.priority+1;
 			},
 		},
 		flags: {protect: 1, mirror: 1},
