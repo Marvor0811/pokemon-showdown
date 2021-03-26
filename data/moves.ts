@@ -3196,13 +3196,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Shuriken Flip",
 		pp: 10,
 		priority: 0,
-		onHit(target){
-			this.add('-activate', pokemon, 'move: Shuriken Flip');
+		onPrepareHit(pokemon) {
+			return !pokemon.removeVolatile('shurikenflip');
 		},
 		condition: {
-			duration: 2,
-			onRestart(pokemon) {
-				this.effectData.duration = 2;
+			onStart(pokemon) {
+				this.add('-singlemove', pokemon, 'Shuriken Flip');
 			},
 			onModifyPriority(priority, pokemon, target, move) {
 				return priority + 1;
