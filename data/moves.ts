@@ -3198,10 +3198,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		condition: {
 			duration: 2,
-			onRestart(pokemon) {
+			/*onRestart(pokemon) {
 				this.add('-singlemove', pokemon, 'Shuriken Flip');
-			},
-			onModifyPriority(priority, pokemon, target, move) {
+			},*/
+			onModifyMove(move, source, target) {
 				return priority + 1;
 			},
 		},
