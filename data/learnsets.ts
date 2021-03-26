@@ -35,6 +35,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 		learnset: {
 			twilightshroud: ["8M"],
 			fivepointstrike: ["8M"],
+			shurikenflip: ["8M"],
 		},
 	},
 	bulbasaur: {

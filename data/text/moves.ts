@@ -36,6 +36,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Hide self",
 		shortDesc: "Used to hide self",
 	},
+	shurikenflip: {
+		name: "Shuriken Flip",
+		desc: "Gives priority",
+		shortDesc: "Gives priority to the next attack if it hits.",
+	},
 	acid: {
 		name: "Acid",
 		desc: "Has a 10% chance to lower the target's Special Defense by 1 stage.",

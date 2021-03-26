@@ -3188,6 +3188,31 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 	},
+	shurikenflip:{
+		num: 605,
+		accuracy: 85,
+		basePower: 70,
+		category: "Special",
+		name: "Shuriken Flip",
+		pp: 10,
+		priority: 0,
+		onHit(target){
+			this.add('-activate', pokemon, 'move: Shuriken Flip');
+		},
+		condition: {
+			duration: 2,
+			onRestart(pokemon) {
+				this.effectData.duration = 2;
+			},
+			onModifyPriority(priority, pokemon, target, move) {
+				return priority + 1;
+			},
+		},
+		flags: {protect: 1, mirror: 1},
+		secondary: null,
+		type: "Fighting",
+		contestType: "Beautiful",
+	},
 	detect: {
 		num: 197,
 		accuracy: true,
