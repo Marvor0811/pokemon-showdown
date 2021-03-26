@@ -3197,7 +3197,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		condition: {
-			duration: 2
+			duration: 2,
 			onRestart(pokemon) {
 				this.add('-singlemove', pokemon, 'Shuriken Flip');
 			},
