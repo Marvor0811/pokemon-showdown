@@ -5173,41 +5173,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const def = target.getStat('def', false, true);
 			const spd = target.getStat('spd', false, true);
 
-			move.type = 'Dark';
-			const darkEffectiveness=target.getMoveHitData(move).typeMod;
-			move.type = 'Fighting';
-			const fightEffectiveness=target.getMoveHitData(move).typeMod;
-			var physical=1;
-			var special=1;
-			if(fightEffectiveness>0){
-				physical = fightEffectiveness*(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50));
-			}
-			else{
-				if(fightEffectiveness==0){
-					physical =(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50));
-				}
-				else{
-					physical= -(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50)/fightEffectiveness);
-				}
-			}
-			if(darkEffectiveness>0){
-				special = darkEffectiveness*(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50));
-			}
-			else{
-				if(darkEffectiveness==0){
-					special =(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50));
-				}
-				else{
-					special= -(Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50)/darkEffectiveness);
-				}
-			}
-			if (special > physical) {
-				move.type = 'Dark';
+			const physical = Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * atk) / def) / 50);
+			const special = Math.floor(Math.floor(Math.floor(Math.floor(2 * pokemon.level / 5 + 2) * 90 * spa) / spd) / 50);
+			if (special > physical || (physical === special && this.random(2) === 0)) {
 				move.category = 'Special';
-			}
-			else {
-				move.type = 'Fighting';
-				move.category = 'Physical';
+				move.type = 'Dark';
 			}
 		},
 		onHit(target, source, move) {
